@@ -1,0 +1,284 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-ink: #08211f;
+  --color-ink-soft: #11332f;
+  --color-forest: #0c4a42;
+  --color-teal: #0e7c6b;
+  --color-teal-bright: #16a892;
+  --color-mint: #d8f5e9;
+  --color-mint-deep: #a9e8d2;
+  --color-lime: #d7f36a;
+  --color-sand: #f3efe6;
+  --color-paper: #fbfaf7;
+  --color-blush: #ffe3d9;
+  --color-coral: #ff7a59;
+  --color-line: #e4e1d8;
+
+  --font-sans: var(--font-manrope);
+  --font-display: var(--font-unbounded);
+  --font-rounded: var(--font-nunito);
+
+  --animate-marquee: marquee 38s linear infinite;
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-float-slow: float 11s ease-in-out infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+    --background: #fbfaf7;
+    --foreground: #08211f;
+  }
+
+  * {
+    border-color: var(--color-line);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6.5rem;
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans), system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: var(--color-mint-deep);
+    color: var(--color-ink);
+  }
+}
+
+@layer components {
+  .container-page {
+    width: 100%;
+    max-width: 1240px;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+
+  @media (min-width: 640px) {
+    .container-page {
+      padding-inline: 2rem;
+    }
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    border-radius: 999px;
+    padding: 0.95rem 1.6rem;
+    font-size: 0.92rem;
+    font-weight: 700;
+    line-height: 1;
+    transition:
+      transform 0.25s ease,
+      background-color 0.25s ease,
+      color 0.25s ease,
+      border-color 0.25s ease,
+      box-shadow 0.25s ease;
+    cursor: pointer;
+  }
+
+  .btn:hover {
+    transform: translateY(-2px);
+  }
+
+  .btn:active {
+    transform: translateY(0);
+  }
+
+  .btn-primary {
+    background: var(--color-ink);
+    color: var(--color-paper);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.18),
+      0 14px 30px -18px rgba(8, 33, 31, 0.9);
+  }
+
+  .btn-primary:hover {
+    background: var(--color-forest);
+  }
+
+  .btn-mint {
+    background: var(--color-lime);
+    color: var(--color-ink);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.55),
+      0 14px 30px -20px rgba(8, 33, 31, 0.55);
+  }
+
+  .btn-mint:hover {
+    background: #e5fa9a;
+  }
+
+  .btn-outline {
+    border: 1px solid rgba(8, 33, 31, 0.16);
+    background: rgba(255, 255, 255, 0.42);
+    color: var(--color-ink);
+    backdrop-filter: blur(12px) saturate(140%);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.75);
+  }
+
+  .btn-outline:hover {
+    border-color: rgba(8, 33, 31, 0.55);
+    background: rgba(255, 255, 255, 0.7);
+  }
+
+  .btn-ghost-light {
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--color-paper);
+    backdrop-filter: blur(12px);
+  }
+
+  .btn-ghost-light:hover {
+    background: rgba(255, 255, 255, 0.14);
+  }
+
+  /* «Акрил» — полупрозрачные панели с мягким блюром и внутренним бликом */
+  .acrylic {
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    background: linear-gradient(
+      150deg,
+      rgba(255, 255, 255, 0.92) 0%,
+      rgba(255, 255, 255, 0.68) 48%,
+      rgba(255, 255, 255, 0.54) 100%
+    );
+    backdrop-filter: blur(20px) saturate(165%);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.95),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.4),
+      0 0 0 1px rgba(8, 33, 31, 0.035),
+      0 26px 55px -44px rgba(8, 33, 31, 0.55);
+  }
+
+  .acrylic-dark {
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background:
+      linear-gradient(
+        150deg,
+        rgba(255, 255, 255, 0.16) 0%,
+        rgba(255, 255, 255, 0.05) 55%,
+        rgba(255, 255, 255, 0.03) 100%
+      ),
+      rgba(8, 33, 31, 0.5);
+    backdrop-filter: blur(24px) saturate(150%);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.2),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.06),
+      0 30px 70px -50px rgba(0, 0, 0, 0.9);
+  }
+
+  .glass-chip {
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(14px) saturate(150%);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.85);
+  }
+
+  /* Плотный акрил для формы: чуть меньше прозрачности, чтобы текст читался */
+  .acrylic-form {
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    background: linear-gradient(
+      155deg,
+      rgba(255, 255, 255, 0.98) 0%,
+      rgba(255, 255, 255, 0.94) 52%,
+      rgba(255, 255, 255, 0.88) 100%
+    );
+    backdrop-filter: blur(24px) saturate(140%);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.98),
+      0 0 0 1px rgba(8, 33, 31, 0.04),
+      0 40px 90px -50px rgba(0, 0, 0, 0.85);
+  }
+
+  /* На телефонах блюр дешевле — меньше нагрузки на отрисовку */
+  @media (max-width: 767px) {
+    .acrylic {
+      backdrop-filter: blur(10px) saturate(140%);
+    }
+
+    .acrylic-dark {
+      backdrop-filter: blur(12px) saturate(140%);
+    }
+
+    .glass-chip {
+      backdrop-filter: blur(8px) saturate(140%);
+    }
+
+    .acrylic-form {
+      backdrop-filter: blur(12px) saturate(140%);
+    }
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .noise {
+    position: relative;
+  }
+
+  .noise::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .mask-fade-x {
+    mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
