@@ -88,7 +88,7 @@ export function SiteFooter() {
               {services.map((service) => (
                 <li key={service.slug}>
                   <Link
-                    href={`/services#${service.anchor}`}
+                    href={`/services/${service.slug}`}
                     className="text-paper/65 transition-colors hover:text-mint-deep"
                   >
                     {service.short}

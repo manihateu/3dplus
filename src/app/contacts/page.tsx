@@ -13,14 +13,17 @@ import { PageHero } from "@/components/page-hero";
 import { Reveal } from "@/components/reveal";
 import { ContactsSection } from "@/components/contacts-section";
 import { BookingSection } from "@/components/booking-section";
+import { JsonLd } from "@/components/json-ld";
+import { contactPageSchema } from "@/lib/schema";
+import { pageMetadata } from "@/lib/seo";
 import { documents, site } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Контакты",
   description:
     "Контакты стоматологии 3D plus в Ульяновске: ул. Федерации, 50, офис 12. Телефоны 8 (8422) 44-11-03 и 8 (8422) 27-17-10. Режим работы Пн–Пт с 9:00 до 19:00.",
-  alternates: { canonical: "/contacts" },
-};
+  path: "/contacts",
+});
 
 export default function ContactsPage() {
   return (
@@ -163,6 +166,7 @@ export default function ContactsPage() {
         </div>
       </section>
 
+      <JsonLd data={contactPageSchema()} />
       <BookingSection id="zapis" />
     </>
   );

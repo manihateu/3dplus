@@ -1,0 +1,1037 @@
+{
+  "generatedAt": "2026-11-11T18:08:27.094Z",
+  "old": {
+    "rawBytes": 99798,
+    "rawGzip": 24168,
+    "rawBrotli": 20262,
+    "cleanBytes": 62524,
+    "cleanGzip": 12285,
+    "cleanBrotli": 9830
+  },
+  "total": {
+    "pages": 13,
+    "htmlBytes": 1901978,
+    "htmlGzip": 299065,
+    "htmlBrotli": 205033,
+    "jsFiles": 15,
+    "jsBytes": 705842,
+    "cssFiles": 1,
+    "cssBytes": 73599,
+    "fontFiles": 11,
+    "fontBytes": 289936
+  },
+  "pages": [
+    {
+      "route": "/about",
+      "file": ".next/server/app/about.html",
+      "htmlBytes": 157746,
+      "htmlGzip": 24696,
+      "htmlBrotli": 16692,
+      "title": "О клинике — стоматология 3D plus",
+      "titleLength": 32,
+      "descriptionLength": 113,
+      "canonical": "https://3dplus73.ru/about",
+      "ogImage": "https://3dplus73.ru/og-image.png",
+      "twitterCard": "summary_large_image",
+      "lang": "ru",
+      "h1": 1,
+      "h2": 6,
+      "images": 5,
+      "imgNoAlt": 0,
+      "imgEmptyAlt": 2,
+      "imgWithDimensions": 3,
+      "scripts": 10,
+      "scriptBytes": 657064,
+      "scriptGzip": 204900,
+      "scriptBrotli": 176915,
+      "scriptFiles": [
+        {
+          "url": "/_next/static/chunks/3mwm0pfu8c8me.js",
+          "bytes": 29913
+        },
+        {
+          "url": "/_next/static/chunks/0x3zgld0yn029.js",
+          "bytes": 228123
+        },
+        {
+          "url": "/_next/static/chunks/2fuxlcqleg9x-.js",
+          "bytes": 169875
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "bytes": 9974
+        },
+        {
+          "url": "/_next/static/chunks/3cs-fmihypdk0.js",
+          "bytes": 25085
+        },
+        {
+          "url": "/_next/static/chunks/1p1xp3ohtz1at.js",
+          "bytes": 36506
+        },
+        {
+          "url": "/_next/static/chunks/35u5n_-o4ycy8.js",
+          "bytes": 30852
+        },
+        {
+          "url": "/_next/static/chunks/1qepg79ku-edx.js",
+          "bytes": 7583
+        },
+        {
+          "url": "/_next/static/chunks/0cz1d0mv5g_q7.js",
+          "bytes": 112594
+        },
+        {
+          "url": "/_next/static/chunks/0uk63h0tuavo5.js",
+          "bytes": 6559
+        }
+      ],
+      "styles": 1,
+      "styleBytes": 73599,
+      "styleGzip": 12988,
+      "styleBrotli": 10705,
+      "preloads": 1,
+      "inlineScriptBytes": 88793,
+      "jsonLdTypes": [
+        "BreadcrumbList",
+        "Physician",
+        "WebSite",
+        "Dentist"
+      ]
+    },
+    {
+      "route": "/contacts",
+      "file": ".next/server/app/contacts.html",
+      "htmlBytes": 108891,
+      "htmlGzip": 18520,
+      "htmlBrotli": 13707,
+      "title": "Контакты — стоматология 3D plus",
+      "titleLength": 31,
+      "descriptionLength": 155,
+      "canonical": "https://3dplus73.ru/contacts",
+      "ogImage": "https://3dplus73.ru/og-image.png",
+      "twitterCard": "summary_large_image",
+      "lang": "ru",
+      "h1": 1,
+      "h2": 3,
+      "images": 2,
+      "imgNoAlt": 0,
+      "imgEmptyAlt": 2,
+      "imgWithDimensions": 2,
+      "scripts": 10,
+      "scriptBytes": 657064,
+      "scriptGzip": 204900,
+      "scriptBrotli": 176915,
+      "scriptFiles": [
+        {
+          "url": "/_next/static/chunks/3mwm0pfu8c8me.js",
+          "bytes": 29913
+        },
+        {
+          "url": "/_next/static/chunks/0x3zgld0yn029.js",
+          "bytes": 228123
+        },
+        {
+          "url": "/_next/static/chunks/2fuxlcqleg9x-.js",
+          "bytes": 169875
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "bytes": 9974
+        },
+        {
+          "url": "/_next/static/chunks/3cs-fmihypdk0.js",
+          "bytes": 25085
+        },
+        {
+          "url": "/_next/static/chunks/1p1xp3ohtz1at.js",
+          "bytes": 36506
+        },
+        {
+          "url": "/_next/static/chunks/35u5n_-o4ycy8.js",
+          "bytes": 30852
+        },
+        {
+          "url": "/_next/static/chunks/1qepg79ku-edx.js",
+          "bytes": 7583
+        },
+        {
+          "url": "/_next/static/chunks/0cz1d0mv5g_q7.js",
+          "bytes": 112594
+        },
+        {
+          "url": "/_next/static/chunks/0uk63h0tuavo5.js",
+          "bytes": 6559
+        }
+      ],
+      "styles": 1,
+      "styleBytes": 73599,
+      "styleGzip": 12988,
+      "styleBrotli": 10705,
+      "preloads": 1,
+      "inlineScriptBytes": 60617,
+      "jsonLdTypes": [
+        "BreadcrumbList",
+        "ContactPage",
+        "WebSite",
+        "Dentist"
+      ]
+    },
+    {
+      "route": "/",
+      "file": ".next/server/app/index.html",
+      "htmlBytes": 260095,
+      "htmlGzip": 37308,
+      "htmlBrotli": 22354,
+      "title": "Стоматология 3D plus — клиника в Ульяновске",
+      "titleLength": 43,
+      "descriptionLength": 173,
+      "canonical": "https://3dplus73.ru",
+      "ogImage": "https://3dplus73.ru/og-image.png",
+      "twitterCard": "summary_large_image",
+      "lang": "ru",
+      "h1": 1,
+      "h2": 8,
+      "images": 4,
+      "imgNoAlt": 0,
+      "imgEmptyAlt": 2,
+      "imgWithDimensions": 2,
+      "scripts": 10,
+      "scriptBytes": 657064,
+      "scriptGzip": 204900,
+      "scriptBrotli": 176915,
+      "scriptFiles": [
+        {
+          "url": "/_next/static/chunks/3mwm0pfu8c8me.js",
+          "bytes": 29913
+        },
+        {
+          "url": "/_next/static/chunks/0x3zgld0yn029.js",
+          "bytes": 228123
+        },
+        {
+          "url": "/_next/static/chunks/2fuxlcqleg9x-.js",
+          "bytes": 169875
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "bytes": 9974
+        },
+        {
+          "url": "/_next/static/chunks/3cs-fmihypdk0.js",
+          "bytes": 25085
+        },
+        {
+          "url": "/_next/static/chunks/1p1xp3ohtz1at.js",
+          "bytes": 36506
+        },
+        {
+          "url": "/_next/static/chunks/35u5n_-o4ycy8.js",
+          "bytes": 30852
+        },
+        {
+          "url": "/_next/static/chunks/1qepg79ku-edx.js",
+          "bytes": 7583
+        },
+        {
+          "url": "/_next/static/chunks/0cz1d0mv5g_q7.js",
+          "bytes": 112594
+        },
+        {
+          "url": "/_next/static/chunks/0uk63h0tuavo5.js",
+          "bytes": 6559
+        }
+      ],
+      "styles": 1,
+      "styleBytes": 73599,
+      "styleGzip": 12988,
+      "styleBrotli": 10705,
+      "preloads": 1,
+      "inlineScriptBytes": 135052,
+      "jsonLdTypes": [
+        "WebSite",
+        "Dentist"
+      ]
+    },
+    {
+      "route": "/price",
+      "file": ".next/server/app/price.html",
+      "htmlBytes": 142877,
+      "htmlGzip": 22044,
+      "htmlBrotli": 16429,
+      "title": "Цены на стоматологию — стоматология 3D plus",
+      "titleLength": 43,
+      "descriptionLength": 123,
+      "canonical": "https://3dplus73.ru/price",
+      "ogImage": "https://3dplus73.ru/og-image.png",
+      "twitterCard": "summary_large_image",
+      "lang": "ru",
+      "h1": 1,
+      "h2": 7,
+      "images": 2,
+      "imgNoAlt": 0,
+      "imgEmptyAlt": 2,
+      "imgWithDimensions": 2,
+      "scripts": 10,
+      "scriptBytes": 683602,
+      "scriptGzip": 210767,
+      "scriptBrotli": 181960,
+      "scriptFiles": [
+        {
+          "url": "/_next/static/chunks/3mwm0pfu8c8me.js",
+          "bytes": 29913
+        },
+        {
+          "url": "/_next/static/chunks/0x3zgld0yn029.js",
+          "bytes": 228123
+        },
+        {
+          "url": "/_next/static/chunks/2fuxlcqleg9x-.js",
+          "bytes": 169875
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "bytes": 9974
+        },
+        {
+          "url": "/_next/static/chunks/3cs-fmihypdk0.js",
+          "bytes": 25085
+        },
+        {
+          "url": "/_next/static/chunks/1p1xp3ohtz1at.js",
+          "bytes": 36506
+        },
+        {
+          "url": "/_next/static/chunks/35u5n_-o4ycy8.js",
+          "bytes": 30852
+        },
+        {
+          "url": "/_next/static/chunks/3e4yx64dwk9xe.js",
+          "bytes": 34121
+        },
+        {
+          "url": "/_next/static/chunks/0cz1d0mv5g_q7.js",
+          "bytes": 112594
+        },
+        {
+          "url": "/_next/static/chunks/0uk63h0tuavo5.js",
+          "bytes": 6559
+        }
+      ],
+      "styles": 1,
+      "styleBytes": 73599,
+      "styleGzip": 12988,
+      "styleBrotli": 10705,
+      "preloads": 1,
+      "inlineScriptBytes": 45101,
+      "jsonLdTypes": [
+        "BreadcrumbList",
+        "WebSite",
+        "Dentist"
+      ]
+    },
+    {
+      "route": "/privacy",
+      "file": ".next/server/app/privacy.html",
+      "htmlBytes": 88597,
+      "htmlGzip": 16325,
+      "htmlBrotli": 11857,
+      "title": "Политика обработки персональных данных — стоматология 3D plus",
+      "titleLength": 61,
+      "descriptionLength": 134,
+      "canonical": "https://3dplus73.ru/privacy",
+      "ogImage": "https://3dplus73.ru/og-image.png",
+      "twitterCard": "summary_large_image",
+      "lang": "ru",
+      "h1": 1,
+      "h2": 7,
+      "images": 2,
+      "imgNoAlt": 0,
+      "imgEmptyAlt": 2,
+      "imgWithDimensions": 2,
+      "scripts": 9,
+      "scriptBytes": 649481,
+      "scriptGzip": 201786,
+      "scriptBrotli": 174353,
+      "scriptFiles": [
+        {
+          "url": "/_next/static/chunks/3mwm0pfu8c8me.js",
+          "bytes": 29913
+        },
+        {
+          "url": "/_next/static/chunks/0x3zgld0yn029.js",
+          "bytes": 228123
+        },
+        {
+          "url": "/_next/static/chunks/2fuxlcqleg9x-.js",
+          "bytes": 169875
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "bytes": 9974
+        },
+        {
+          "url": "/_next/static/chunks/3cs-fmihypdk0.js",
+          "bytes": 25085
+        },
+        {
+          "url": "/_next/static/chunks/1p1xp3ohtz1at.js",
+          "bytes": 36506
+        },
+        {
+          "url": "/_next/static/chunks/35u5n_-o4ycy8.js",
+          "bytes": 30852
+        },
+        {
+          "url": "/_next/static/chunks/0cz1d0mv5g_q7.js",
+          "bytes": 112594
+        },
+        {
+          "url": "/_next/static/chunks/0uk63h0tuavo5.js",
+          "bytes": 6559
+        }
+      ],
+      "styles": 1,
+      "styleBytes": 73599,
+      "styleGzip": 12988,
+      "styleBrotli": 10705,
+      "preloads": 1,
+      "inlineScriptBytes": 55526,
+      "jsonLdTypes": [
+        "BreadcrumbList",
+        "WebSite",
+        "Dentist"
+      ]
+    },
+    {
+      "route": "/reviews",
+      "file": ".next/server/app/reviews.html",
+      "htmlBytes": 162978,
+      "htmlGzip": 22119,
+      "htmlBrotli": 14742,
+      "title": "Отзывы пациентов — стоматология 3D plus",
+      "titleLength": 39,
+      "descriptionLength": 116,
+      "canonical": "https://3dplus73.ru/reviews",
+      "ogImage": "https://3dplus73.ru/og-image.png",
+      "twitterCard": "summary_large_image",
+      "lang": "ru",
+      "h1": 1,
+      "h2": 6,
+      "images": 2,
+      "imgNoAlt": 0,
+      "imgEmptyAlt": 2,
+      "imgWithDimensions": 2,
+      "scripts": 10,
+      "scriptBytes": 657064,
+      "scriptGzip": 204900,
+      "scriptBrotli": 176915,
+      "scriptFiles": [
+        {
+          "url": "/_next/static/chunks/3mwm0pfu8c8me.js",
+          "bytes": 29913
+        },
+        {
+          "url": "/_next/static/chunks/0x3zgld0yn029.js",
+          "bytes": 228123
+        },
+        {
+          "url": "/_next/static/chunks/2fuxlcqleg9x-.js",
+          "bytes": 169875
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "bytes": 9974
+        },
+        {
+          "url": "/_next/static/chunks/3cs-fmihypdk0.js",
+          "bytes": 25085
+        },
+        {
+          "url": "/_next/static/chunks/1p1xp3ohtz1at.js",
+          "bytes": 36506
+        },
+        {
+          "url": "/_next/static/chunks/35u5n_-o4ycy8.js",
+          "bytes": 30852
+        },
+        {
+          "url": "/_next/static/chunks/1qepg79ku-edx.js",
+          "bytes": 7583
+        },
+        {
+          "url": "/_next/static/chunks/0cz1d0mv5g_q7.js",
+          "bytes": 112594
+        },
+        {
+          "url": "/_next/static/chunks/0uk63h0tuavo5.js",
+          "bytes": 6559
+        }
+      ],
+      "styles": 1,
+      "styleBytes": 73599,
+      "styleGzip": 12988,
+      "styleBrotli": 10705,
+      "preloads": 1,
+      "inlineScriptBytes": 79553,
+      "jsonLdTypes": [
+        "BreadcrumbList",
+        "WebSite",
+        "Dentist"
+      ]
+    },
+    {
+      "route": "/services/estetika",
+      "file": ".next/server/app/services/estetika.html",
+      "htmlBytes": 128396,
+      "htmlGzip": 21378,
+      "htmlBrotli": 15155,
+      "title": "Виниры и эстетика — стоматология 3D plus",
+      "titleLength": 40,
+      "descriptionLength": 153,
+      "canonical": "https://3dplus73.ru/services/estetika",
+      "ogImage": "https://3dplus73.ru/og-image.png",
+      "twitterCard": "summary_large_image",
+      "lang": "ru",
+      "h1": 1,
+      "h2": 7,
+      "images": 2,
+      "imgNoAlt": 0,
+      "imgEmptyAlt": 2,
+      "imgWithDimensions": 2,
+      "scripts": 10,
+      "scriptBytes": 657064,
+      "scriptGzip": 204900,
+      "scriptBrotli": 176915,
+      "scriptFiles": [
+        {
+          "url": "/_next/static/chunks/3mwm0pfu8c8me.js",
+          "bytes": 29913
+        },
+        {
+          "url": "/_next/static/chunks/0x3zgld0yn029.js",
+          "bytes": 228123
+        },
+        {
+          "url": "/_next/static/chunks/2fuxlcqleg9x-.js",
+          "bytes": 169875
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "bytes": 9974
+        },
+        {
+          "url": "/_next/static/chunks/3cs-fmihypdk0.js",
+          "bytes": 25085
+        },
+        {
+          "url": "/_next/static/chunks/1p1xp3ohtz1at.js",
+          "bytes": 36506
+        },
+        {
+          "url": "/_next/static/chunks/35u5n_-o4ycy8.js",
+          "bytes": 30852
+        },
+        {
+          "url": "/_next/static/chunks/1qepg79ku-edx.js",
+          "bytes": 7583
+        },
+        {
+          "url": "/_next/static/chunks/0cz1d0mv5g_q7.js",
+          "bytes": 112594
+        },
+        {
+          "url": "/_next/static/chunks/0uk63h0tuavo5.js",
+          "bytes": 6559
+        }
+      ],
+      "styles": 1,
+      "styleBytes": 73599,
+      "styleGzip": 12988,
+      "styleBrotli": 10705,
+      "preloads": 1,
+      "inlineScriptBytes": 75337,
+      "jsonLdTypes": [
+        "Service",
+        "FAQPage",
+        "BreadcrumbList",
+        "WebSite",
+        "Dentist"
+      ]
+    },
+    {
+      "route": "/services/gigiena",
+      "file": ".next/server/app/services/gigiena.html",
+      "htmlBytes": 129389,
+      "htmlGzip": 21452,
+      "htmlBrotli": 15213,
+      "title": "Профессиональная гигиена — стоматология 3D plus",
+      "titleLength": 47,
+      "descriptionLength": 147,
+      "canonical": "https://3dplus73.ru/services/gigiena",
+      "ogImage": "https://3dplus73.ru/og-image.png",
+      "twitterCard": "summary_large_image",
+      "lang": "ru",
+      "h1": 1,
+      "h2": 7,
+      "images": 2,
+      "imgNoAlt": 0,
+      "imgEmptyAlt": 2,
+      "imgWithDimensions": 2,
+      "scripts": 10,
+      "scriptBytes": 657064,
+      "scriptGzip": 204900,
+      "scriptBrotli": 176915,
+      "scriptFiles": [
+        {
+          "url": "/_next/static/chunks/3mwm0pfu8c8me.js",
+          "bytes": 29913
+        },
+        {
+          "url": "/_next/static/chunks/0x3zgld0yn029.js",
+          "bytes": 228123
+        },
+        {
+          "url": "/_next/static/chunks/2fuxlcqleg9x-.js",
+          "bytes": 169875
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "bytes": 9974
+        },
+        {
+          "url": "/_next/static/chunks/3cs-fmihypdk0.js",
+          "bytes": 25085
+        },
+        {
+          "url": "/_next/static/chunks/1p1xp3ohtz1at.js",
+          "bytes": 36506
+        },
+        {
+          "url": "/_next/static/chunks/35u5n_-o4ycy8.js",
+          "bytes": 30852
+        },
+        {
+          "url": "/_next/static/chunks/1qepg79ku-edx.js",
+          "bytes": 7583
+        },
+        {
+          "url": "/_next/static/chunks/0cz1d0mv5g_q7.js",
+          "bytes": 112594
+        },
+        {
+          "url": "/_next/static/chunks/0uk63h0tuavo5.js",
+          "bytes": 6559
+        }
+      ],
+      "styles": 1,
+      "styleBytes": 73599,
+      "styleGzip": 12988,
+      "styleBrotli": 10705,
+      "preloads": 1,
+      "inlineScriptBytes": 76121,
+      "jsonLdTypes": [
+        "Service",
+        "FAQPage",
+        "BreadcrumbList",
+        "WebSite",
+        "Dentist"
+      ]
+    },
+    {
+      "route": "/services/hirurgiya",
+      "file": ".next/server/app/services/hirurgiya.html",
+      "htmlBytes": 129742,
+      "htmlGzip": 21551,
+      "htmlBrotli": 15233,
+      "title": "Удаление зубов и хирургия — стоматология 3D plus",
+      "titleLength": 48,
+      "descriptionLength": 157,
+      "canonical": "https://3dplus73.ru/services/hirurgiya",
+      "ogImage": "https://3dplus73.ru/og-image.png",
+      "twitterCard": "summary_large_image",
+      "lang": "ru",
+      "h1": 1,
+      "h2": 7,
+      "images": 2,
+      "imgNoAlt": 0,
+      "imgEmptyAlt": 2,
+      "imgWithDimensions": 2,
+      "scripts": 10,
+      "scriptBytes": 657064,
+      "scriptGzip": 204900,
+      "scriptBrotli": 176915,
+      "scriptFiles": [
+        {
+          "url": "/_next/static/chunks/3mwm0pfu8c8me.js",
+          "bytes": 29913
+        },
+        {
+          "url": "/_next/static/chunks/0x3zgld0yn029.js",
+          "bytes": 228123
+        },
+        {
+          "url": "/_next/static/chunks/2fuxlcqleg9x-.js",
+          "bytes": 169875
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "bytes": 9974
+        },
+        {
+          "url": "/_next/static/chunks/3cs-fmihypdk0.js",
+          "bytes": 25085
+        },
+        {
+          "url": "/_next/static/chunks/1p1xp3ohtz1at.js",
+          "bytes": 36506
+        },
+        {
+          "url": "/_next/static/chunks/35u5n_-o4ycy8.js",
+          "bytes": 30852
+        },
+        {
+          "url": "/_next/static/chunks/1qepg79ku-edx.js",
+          "bytes": 7583
+        },
+        {
+          "url": "/_next/static/chunks/0cz1d0mv5g_q7.js",
+          "bytes": 112594
+        },
+        {
+          "url": "/_next/static/chunks/0uk63h0tuavo5.js",
+          "bytes": 6559
+        }
+      ],
+      "styles": 1,
+      "styleBytes": 73599,
+      "styleGzip": 12988,
+      "styleBrotli": 10705,
+      "preloads": 1,
+      "inlineScriptBytes": 76229,
+      "jsonLdTypes": [
+        "Service",
+        "FAQPage",
+        "BreadcrumbList",
+        "WebSite",
+        "Dentist"
+      ]
+    },
+    {
+      "route": "/services/implantaciya",
+      "file": ".next/server/app/services/implantaciya.html",
+      "htmlBytes": 126919,
+      "htmlGzip": 21281,
+      "htmlBrotli": 15109,
+      "title": "Имплантация зубов — стоматология 3D plus",
+      "titleLength": 40,
+      "descriptionLength": 131,
+      "canonical": "https://3dplus73.ru/services/implantaciya",
+      "ogImage": "https://3dplus73.ru/og-image.png",
+      "twitterCard": "summary_large_image",
+      "lang": "ru",
+      "h1": 1,
+      "h2": 7,
+      "images": 2,
+      "imgNoAlt": 0,
+      "imgEmptyAlt": 2,
+      "imgWithDimensions": 2,
+      "scripts": 10,
+      "scriptBytes": 657064,
+      "scriptGzip": 204900,
+      "scriptBrotli": 176915,
+      "scriptFiles": [
+        {
+          "url": "/_next/static/chunks/3mwm0pfu8c8me.js",
+          "bytes": 29913
+        },
+        {
+          "url": "/_next/static/chunks/0x3zgld0yn029.js",
+          "bytes": 228123
+        },
+        {
+          "url": "/_next/static/chunks/2fuxlcqleg9x-.js",
+          "bytes": 169875
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "bytes": 9974
+        },
+        {
+          "url": "/_next/static/chunks/3cs-fmihypdk0.js",
+          "bytes": 25085
+        },
+        {
+          "url": "/_next/static/chunks/1p1xp3ohtz1at.js",
+          "bytes": 36506
+        },
+        {
+          "url": "/_next/static/chunks/35u5n_-o4ycy8.js",
+          "bytes": 30852
+        },
+        {
+          "url": "/_next/static/chunks/1qepg79ku-edx.js",
+          "bytes": 7583
+        },
+        {
+          "url": "/_next/static/chunks/0cz1d0mv5g_q7.js",
+          "bytes": 112594
+        },
+        {
+          "url": "/_next/static/chunks/0uk63h0tuavo5.js",
+          "bytes": 6559
+        }
+      ],
+      "styles": 1,
+      "styleBytes": 73599,
+      "styleGzip": 12988,
+      "styleBrotli": 10705,
+      "preloads": 1,
+      "inlineScriptBytes": 74516,
+      "jsonLdTypes": [
+        "Service",
+        "FAQPage",
+        "BreadcrumbList",
+        "WebSite",
+        "Dentist"
+      ]
+    },
+    {
+      "route": "/services/ortopediya",
+      "file": ".next/server/app/services/ortopediya.html",
+      "htmlBytes": 129692,
+      "htmlGzip": 21607,
+      "htmlBrotli": 15280,
+      "title": "Протезирование зубов — стоматология 3D plus",
+      "titleLength": 43,
+      "descriptionLength": 151,
+      "canonical": "https://3dplus73.ru/services/ortopediya",
+      "ogImage": "https://3dplus73.ru/og-image.png",
+      "twitterCard": "summary_large_image",
+      "lang": "ru",
+      "h1": 1,
+      "h2": 7,
+      "images": 2,
+      "imgNoAlt": 0,
+      "imgEmptyAlt": 2,
+      "imgWithDimensions": 2,
+      "scripts": 10,
+      "scriptBytes": 657064,
+      "scriptGzip": 204900,
+      "scriptBrotli": 176915,
+      "scriptFiles": [
+        {
+          "url": "/_next/static/chunks/3mwm0pfu8c8me.js",
+          "bytes": 29913
+        },
+        {
+          "url": "/_next/static/chunks/0x3zgld0yn029.js",
+          "bytes": 228123
+        },
+        {
+          "url": "/_next/static/chunks/2fuxlcqleg9x-.js",
+          "bytes": 169875
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "bytes": 9974
+        },
+        {
+          "url": "/_next/static/chunks/3cs-fmihypdk0.js",
+          "bytes": 25085
+        },
+        {
+          "url": "/_next/static/chunks/1p1xp3ohtz1at.js",
+          "bytes": 36506
+        },
+        {
+          "url": "/_next/static/chunks/35u5n_-o4ycy8.js",
+          "bytes": 30852
+        },
+        {
+          "url": "/_next/static/chunks/1qepg79ku-edx.js",
+          "bytes": 7583
+        },
+        {
+          "url": "/_next/static/chunks/0cz1d0mv5g_q7.js",
+          "bytes": 112594
+        },
+        {
+          "url": "/_next/static/chunks/0uk63h0tuavo5.js",
+          "bytes": 6559
+        }
+      ],
+      "styles": 1,
+      "styleBytes": 73599,
+      "styleGzip": 12988,
+      "styleBrotli": 10705,
+      "preloads": 1,
+      "inlineScriptBytes": 76289,
+      "jsonLdTypes": [
+        "Service",
+        "FAQPage",
+        "BreadcrumbList",
+        "WebSite",
+        "Dentist"
+      ]
+    },
+    {
+      "route": "/services/terapiya",
+      "file": ".next/server/app/services/terapiya.html",
+      "htmlBytes": 134969,
+      "htmlGzip": 22668,
+      "htmlBrotli": 15746,
+      "title": "Лечение кариеса и каналов — стоматология 3D plus",
+      "titleLength": 48,
+      "descriptionLength": 155,
+      "canonical": "https://3dplus73.ru/services/terapiya",
+      "ogImage": "https://3dplus73.ru/og-image.png",
+      "twitterCard": "summary_large_image",
+      "lang": "ru",
+      "h1": 1,
+      "h2": 8,
+      "images": 2,
+      "imgNoAlt": 0,
+      "imgEmptyAlt": 2,
+      "imgWithDimensions": 2,
+      "scripts": 10,
+      "scriptBytes": 657064,
+      "scriptGzip": 204900,
+      "scriptBrotli": 176915,
+      "scriptFiles": [
+        {
+          "url": "/_next/static/chunks/3mwm0pfu8c8me.js",
+          "bytes": 29913
+        },
+        {
+          "url": "/_next/static/chunks/0x3zgld0yn029.js",
+          "bytes": 228123
+        },
+        {
+          "url": "/_next/static/chunks/2fuxlcqleg9x-.js",
+          "bytes": 169875
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "bytes": 9974
+        },
+        {
+          "url": "/_next/static/chunks/3cs-fmihypdk0.js",
+          "bytes": 25085
+        },
+        {
+          "url": "/_next/static/chunks/1p1xp3ohtz1at.js",
+          "bytes": 36506
+        },
+        {
+          "url": "/_next/static/chunks/35u5n_-o4ycy8.js",
+          "bytes": 30852
+        },
+        {
+          "url": "/_next/static/chunks/1qepg79ku-edx.js",
+          "bytes": 7583
+        },
+        {
+          "url": "/_next/static/chunks/0cz1d0mv5g_q7.js",
+          "bytes": 112594
+        },
+        {
+          "url": "/_next/static/chunks/0uk63h0tuavo5.js",
+          "bytes": 6559
+        }
+      ],
+      "styles": 1,
+      "styleBytes": 73599,
+      "styleGzip": 12988,
+      "styleBrotli": 10705,
+      "preloads": 1,
+      "inlineScriptBytes": 79435,
+      "jsonLdTypes": [
+        "Service",
+        "FAQPage",
+        "BreadcrumbList",
+        "WebSite",
+        "Dentist"
+      ]
+    },
+    {
+      "route": "/services",
+      "file": ".next/server/app/services.html",
+      "htmlBytes": 201687,
+      "htmlGzip": 28116,
+      "htmlBrotli": 17516,
+      "title": "Стоматологические услуги в Ульяновске — стоматология 3D plus",
+      "titleLength": 60,
+      "descriptionLength": 126,
+      "canonical": "https://3dplus73.ru/services",
+      "ogImage": "https://3dplus73.ru/og-image.png",
+      "twitterCard": "summary_large_image",
+      "lang": "ru",
+      "h1": 1,
+      "h2": 10,
+      "images": 2,
+      "imgNoAlt": 0,
+      "imgEmptyAlt": 2,
+      "imgWithDimensions": 2,
+      "scripts": 10,
+      "scriptBytes": 657064,
+      "scriptGzip": 204900,
+      "scriptBrotli": 176915,
+      "scriptFiles": [
+        {
+          "url": "/_next/static/chunks/3mwm0pfu8c8me.js",
+          "bytes": 29913
+        },
+        {
+          "url": "/_next/static/chunks/0x3zgld0yn029.js",
+          "bytes": 228123
+        },
+        {
+          "url": "/_next/static/chunks/2fuxlcqleg9x-.js",
+          "bytes": 169875
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "bytes": 9974
+        },
+        {
+          "url": "/_next/static/chunks/3cs-fmihypdk0.js",
+          "bytes": 25085
+        },
+        {
+          "url": "/_next/static/chunks/1p1xp3ohtz1at.js",
+          "bytes": 36506
+        },
+        {
+          "url": "/_next/static/chunks/35u5n_-o4ycy8.js",
+          "bytes": 30852
+        },
+        {
+          "url": "/_next/static/chunks/1qepg79ku-edx.js",
+          "bytes": 7583
+        },
+        {
+          "url": "/_next/static/chunks/0cz1d0mv5g_q7.js",
+          "bytes": 112594
+        },
+        {
+          "url": "/_next/static/chunks/0uk63h0tuavo5.js",
+          "bytes": 6559
+        }
+      ],
+      "styles": 1,
+      "styleBytes": 73599,
+      "styleGzip": 12988,
+      "styleBrotli": 10705,
+      "preloads": 1,
+      "inlineScriptBytes": 113749,
+      "jsonLdTypes": [
+        "ItemList",
+        "FAQPage",
+        "BreadcrumbList",
+        "WebSite",
+        "Dentist"
+      ]
+    }
+  ]
+}

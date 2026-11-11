@@ -6,14 +6,15 @@ import { SectionHeading } from "@/components/section-heading";
 import { ReviewCard } from "@/components/home/reviews-section";
 import { Stars } from "@/components/stars";
 import { BookingSection } from "@/components/booking-section";
+import { pageMetadata } from "@/lib/seo";
 import { reviews } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Отзывы",
+export const metadata: Metadata = pageMetadata({
+  title: "Отзывы пациентов",
   description:
     "Отзывы пациентов о стоматологии 3D plus в Ульяновске. Рейтинг 4.8 из 5 на основе 211 отзывов на Про докторов и ZOON.",
-  alternates: { canonical: "/reviews" },
-};
+  path: "/reviews",
+});
 
 const platforms = [
   {
@@ -49,7 +50,7 @@ export default function ReviewsPage() {
           </div>
           <div className="h-10 w-px bg-ink/10" />
           <div>
-            <Stars size="size-4" />
+            <Stars size="size-4" label="Рейтинг 4.8 из 5" />
             <p className="mt-1 text-[11px] font-semibold text-ink/50">
               211 отзывов на Про докторов и ZOON
             </p>
@@ -91,7 +92,7 @@ export default function ReviewsPage() {
                       {platform.rating}
                     </span>
                     <div>
-                      <Stars size="size-3.5" />
+                      <Stars size="size-3.5" label="Рейтинг 4.8 из 5" />
                       <p className="mt-1 text-[10px] text-ink/40">{platform.count}</p>
                     </div>
                   </div>

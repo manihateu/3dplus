@@ -34,7 +34,7 @@ export function AboutPreview() {
               <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/20 to-transparent" />
               <div className="absolute left-5 top-5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-ink/40 px-3.5 py-2 text-[10px] font-bold uppercase tracking-[0.16em] text-paper backdrop-blur">
                 <span className="size-1.5 rounded-full bg-lime" />
-                С 2018 года рядом
+                Клиника в центре Ульяновска
               </div>
               <div className="absolute inset-x-5 bottom-5 flex items-end justify-between gap-4">
                 <div>

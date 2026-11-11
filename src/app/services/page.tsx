@@ -1,19 +1,33 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowUpRight, CalendarCheck, Check, ClipboardList, MessageCircle, Stethoscope, Wallet } from "lucide-react";
+import {
+  ArrowUpRight,
+  CalendarCheck,
+  Check,
+  ClipboardList,
+  MessageCircle,
+  Plus,
+  Stethoscope,
+  Wallet,
+} from "lucide-react";
 import { PageHero } from "@/components/page-hero";
 import { Reveal } from "@/components/reveal";
+import { SectionHeading } from "@/components/section-heading";
 import { ServiceIconGlyph } from "@/components/service-icon";
 import { BookingSection } from "@/components/booking-section";
+import { JsonLd } from "@/components/json-ld";
+import { servicesFaq } from "@/lib/faq";
+import { faqSchema, servicesItemListSchema } from "@/lib/schema";
+import { pageMetadata } from "@/lib/seo";
 import { services } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
-export const metadata: Metadata = {
-  title: "Услуги",
+export const metadata: Metadata = pageMetadata({
+  title: "Стоматологические услуги в Ульяновске",
   description:
     "Стоматологические услуги 3D plus в Ульяновске: терапия, хирургия, ортопедия, имплантация, эстетическая стоматология и гигиена.",
-  alternates: { canonical: "/services" },
-};
+  path: "/services",
+});
 
 const steps = [
   {
@@ -41,6 +55,7 @@ const steps = [
 export default function ServicesPage() {
   return (
     <>
+      <JsonLd data={[servicesItemListSchema(), faqSchema(servicesFaq)]} />
       <PageHero
         eyebrow="Услуги"
         title="Стоматология по всем направлениям"
@@ -100,6 +115,10 @@ export default function ServicesPage() {
                     </Link>
                     <Link href="/price" className="btn btn-outline !py-3">
                       Прайс-лист
+                      <ArrowUpRight className="size-3.5" />
+                    </Link>
+                    <Link href={`/services/${service.slug}`} className="btn btn-outline !py-3">
+                      Подробнее
                       <ArrowUpRight className="size-3.5" />
                     </Link>
                   </div>
@@ -168,6 +187,34 @@ export default function ServicesPage() {
                 </Reveal>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-sand/40 py-16 sm:py-20">
+        <div className="container-page">
+          <Reveal>
+            <SectionHeading
+              eyebrow="Вопросы и ответы"
+              title="Частые вопросы о лечении"
+              description="Коротко о ценах, записи и подготовке к приёму. Если вопроса нет в списке — позвоните или оставьте заявку."
+            />
+          </Reveal>
+          <div className="mt-8 grid gap-3 lg:grid-cols-2">
+            {servicesFaq.map((item, index) => (
+              <Reveal key={item.question} delay={index * 0.03}>
+                <details className="group rounded-[1.4rem] acrylic p-5">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-[13.5px] font-extrabold leading-snug">
+                    {item.question}
+                    <Plus
+                      className="size-4 shrink-0 text-teal transition-transform duration-300 group-open:rotate-45"
+                      aria-hidden
+                    />
+                  </summary>
+                  <p className="mt-3 text-[12.5px] leading-relaxed text-ink/55">{item.answer}</p>
+                </details>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>

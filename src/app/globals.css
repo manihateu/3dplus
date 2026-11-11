@@ -17,7 +17,6 @@
 
   --font-sans: var(--font-manrope);
   --font-display: var(--font-unbounded);
-  --font-rounded: var(--font-nunito);
 
   --animate-marquee: marquee 38s linear infinite;
   --animate-float: float 7s ease-in-out infinite;
@@ -40,6 +39,39 @@
   }
   50% {
     transform: translateY(-14px);
+  }
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(var(--reveal-y, 26px));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -71,6 +103,11 @@
     background: var(--color-mint-deep);
     color: var(--color-ink);
   }
+
+  :where(a, button, input, select, textarea, summary):focus-visible {
+    outline: 2px solid var(--color-teal);
+    outline-offset: 3px;
+  }
 }
 
 @layer components {
@@ -85,6 +122,59 @@
     .container-page {
       padding-inline: 2rem;
     }
+  }
+
+  .skip-link {
+    position: fixed;
+    left: 1rem;
+    top: 1rem;
+    z-index: 100;
+    border-radius: 999px;
+    background: var(--color-ink);
+    color: var(--color-paper);
+    padding: 0.8rem 1.25rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    transform: translateY(-200%);
+    transition: transform 0.2s ease;
+  }
+
+  .skip-link:focus {
+    transform: translateY(0);
+  }
+
+  /*
+   * Контент виден без JS. Анимация — прогрессивное улучшение:
+   * в браузерах с animation-timeline она запускается при скролле,
+   * в остальных — один раз при загрузке страницы.
+   */
+  .reveal {
+    animation: reveal-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+    animation-delay: var(--reveal-delay, 0s);
+  }
+
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation-delay: 0s;
+      animation-timeline: view();
+      animation-range: entry 0% entry 60%;
+    }
+  }
+
+  .hero-enter {
+    animation: hero-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .hero-enter-delay {
+    animation-delay: 0.15s;
+  }
+
+  .mobile-menu {
+    animation: menu-in 0.25s ease-out both;
+  }
+
+  .form-enter {
+    animation: menu-in 0.3s ease-out both;
   }
 
   .btn {
@@ -280,5 +370,12 @@
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .reveal,
+  .hero-enter,
+  .mobile-menu,
+  .form-enter {
+    animation: none !important;
   }
 }

@@ -1,10 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { AnimatePresence, motion } from "framer-motion";
 import {
   ArrowUpRight,
   CalendarCheck,
@@ -22,6 +21,8 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -35,6 +36,22 @@ export function SiteHeader() {
     return () => {
       document.body.style.overflow = "";
     };
+  }, [open]);
+
+  useEffect(() => {
+    if (!open) return;
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+        triggerRef.current?.focus();
+      }
+    };
+
+    document.addEventListener("keydown", onKeyDown);
+    menuRef.current?.querySelector<HTMLElement>("a, button")?.focus();
+
+    return () => document.removeEventListener("keydown", onKeyDown);
   }, [open]);
 
   const isActive = (href: string) =>
@@ -93,7 +110,7 @@ export function SiteHeader() {
               width={75}
               height={75}
               className="size-[54px] w-auto object-contain transition-transform duration-300 group-hover:-rotate-6"
-              priority
+              loading="eager"
             />
             <span className="leading-none">
               <span className="block font-display text-[19px] font-semibold tracking-tight text-ink">
@@ -113,6 +130,7 @@ export function SiteHeader() {
               <Link
                 key={item.href}
                 href={item.href}
+                aria-current={isActive(item.href) ? "page" : undefined}
                 className={cn(
                   "rounded-full px-4 py-2.5 text-[13.5px] font-bold transition-colors",
                   isActive(item.href)
@@ -139,11 +157,14 @@ export function SiteHeader() {
               </Link>
             </div>
             <button
+              ref={triggerRef}
               type="button"
               onClick={() => setOpen((value) => !value)}
               className="grid size-11 place-items-center rounded-full border border-ink/10 bg-paper text-ink transition-colors hover:bg-ink hover:text-paper lg:hidden"
               aria-label={open ? "Закрыть меню" : "Открыть меню"}
               aria-expanded={open}
+              aria-controls="mobile-menu"
+              aria-haspopup="dialog"
             >
               {open ? <X className="size-5" /> : <Menu className="size-5" />}
             </button>
@@ -151,55 +172,50 @@ export function SiteHeader() {
         </div>
       </header>
 
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            className="fixed inset-0 z-40 bg-paper px-5 pb-8 pt-24 lg:hidden"
-            initial={{ opacity: 0, y: -12 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -12 }}
-            transition={{ duration: 0.25, ease: "easeOut" }}
-          >
+      {open ? (
+        <div
+          id="mobile-menu"
+          ref={menuRef}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Меню сайта"
+          className="mobile-menu fixed inset-0 z-40 bg-paper px-5 pb-8 pt-24 lg:hidden"
+        >
             <div className="flex h-full flex-col">
               <nav className="flex flex-col" aria-label="Мобильная навигация">
-                {nav.map((item, index) => (
-                  <motion.div
+                {nav.map((item) => (
+                  <Link
                     key={item.href}
-                    initial={{ opacity: 0, y: 14 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.04 * index + 0.05 }}
+                    href={item.href}
+                    onClick={() => setOpen(false)}
+                    aria-current={isActive(item.href) ? "page" : undefined}
+                    className={cn(
+                      "flex items-center justify-between border-b border-line py-4 font-display text-2xl font-medium tracking-tight",
+                      isActive(item.href) ? "text-teal" : "text-ink",
+                    )}
                   >
-                    <Link
-                      href={item.href}
-                      onClick={() => setOpen(false)}
-                      className={cn(
-                        "flex items-center justify-between border-b border-line py-4 font-display text-2xl font-medium tracking-tight",
-                        isActive(item.href) ? "text-teal" : "text-ink",
-                      )}
-                    >
-                      {item.label}
-                      <ArrowUpRight className="size-5 text-ink/30" />
-                    </Link>
-                  </motion.div>
+                    {item.label}
+                    <ArrowUpRight className="size-5 text-ink/30" aria-hidden />
+                  </Link>
                 ))}
               </nav>
 
               <div className="mt-8 space-y-3">
                 <a href={site.phone.href} className="flex items-center gap-3 text-lg font-extrabold">
                   <span className="grid size-10 place-items-center rounded-full bg-mint">
-                    <Phone className="size-4" />
+                    <Phone className="size-4" aria-hidden />
                   </span>
                   {site.phone.display}
                 </a>
                 <p className="flex items-center gap-3 text-sm text-ink/60">
                   <span className="grid size-10 place-items-center rounded-full bg-sand">
-                    <Clock className="size-4" />
+                    <Clock className="size-4" aria-hidden />
                   </span>
                   {site.hours}
                 </p>
                 <p className="flex items-center gap-3 text-sm text-ink/60">
                   <span className="grid size-10 place-items-center rounded-full bg-sand">
-                    <MapPin className="size-4" />
+                    <MapPin className="size-4" aria-hidden />
                   </span>
                   {site.address}
                 </p>
@@ -210,13 +226,12 @@ export function SiteHeader() {
                 onClick={() => setOpen(false)}
                 className="btn btn-primary mt-auto w-full"
               >
-                <CalendarCheck className="size-4" />
+                <CalendarCheck className="size-4" aria-hidden />
                 Записаться на приём
               </Link>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          </div>
+      ) : null}
     </>
   );
 }

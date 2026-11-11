@@ -3,14 +3,15 @@ import { Info, Phone } from "lucide-react";
 import { PageHero } from "@/components/page-hero";
 import { PriceExplorer } from "@/components/price-explorer";
 import { BookingSection } from "@/components/booking-section";
+import { pageMetadata } from "@/lib/seo";
 import { site } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Цены",
+export const metadata: Metadata = pageMetadata({
+  title: "Цены на стоматологию",
   description:
     "Актуальный прайс-лист стоматологии 3D plus в Ульяновске: лечение, имплантация, протезирование, гигиена. 150 услуг с ценами.",
-  alternates: { canonical: "/price" },
-};
+  path: "/price",
+});
 
 export default function PricePage() {
   return (

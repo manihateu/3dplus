@@ -1,9 +1,13 @@
 import type { Metadata, Viewport } from "next";
-import { Manrope, Nunito, Unbounded } from "next/font/google";
+import { Manrope, Unbounded } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { MobileCta } from "@/components/mobile-cta";
+import { CookieConsent } from "@/components/cookie-consent";
+import { JsonLd } from "@/components/json-ld";
+import { clinicSchema, websiteSchema } from "@/lib/schema";
+import { site } from "@/lib/site";
 
 const manrope = Manrope({
   subsets: ["latin", "cyrillic"],
@@ -17,43 +21,48 @@ const unbounded = Unbounded({
   display: "swap",
 });
 
-const nunito = Nunito({
-  subsets: ["latin", "cyrillic"],
-  weight: ["700", "800"],
-  variable: "--font-nunito",
-  display: "swap",
-});
-
 export const metadata: Metadata = {
-  metadataBase: new URL("https://3dplus73.ru"),
+  metadataBase: new URL(site.url),
   title: {
     default: "Стоматология 3D plus — клиника в Ульяновске",
     template: "%s — стоматология 3D plus",
   },
-  description:
-    "Стоматология 3D plus в Ульяновске: лечение кариеса, имплантация, протезирование, виниры и профессиональная гигиена. Опытные врачи и современное оборудование.",
-  keywords: [
-    "стоматология Ульяновск",
-    "3D plus",
-    "имплантация зубов Ульяновск",
-    "лечение кариеса",
-    "виниры",
-    "протезирование",
-    "чистка зубов",
-  ],
+  description: site.description,
   applicationName: "Стоматология 3D plus",
   authors: [{ name: "Стоматология 3D plus" }],
+  creator: "Стоматология 3D plus",
+  publisher: "Стоматология 3D plus",
+  category: "health",
   openGraph: {
     type: "website",
     locale: "ru_RU",
-    url: "https://3dplus73.ru",
+    url: site.url,
     siteName: "Стоматология 3D plus",
     title: "Стоматология 3D plus — клиника в Ульяновске",
     description:
       "Забота о здоровье зубов в 3D plus: терапия, хирургия, ортопедия, имплантация, эстетика и гигиена.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Стоматология 3D plus в Ульяновске",
+      },
+    ],
   },
-  alternates: { canonical: "/" },
+  twitter: {
+    card: "summary_large_image",
+    title: "Стоматология 3D plus — клиника в Ульяновске",
+    description:
+      "Забота о здоровье зубов в 3D plus: терапия, хирургия, ортопедия, имплантация, эстетика и гигиена.",
+    images: ["/og-image.png"],
+  },
   robots: { index: true, follow: true },
+  appleWebApp: {
+    capable: true,
+    title: "3D plus",
+    statusBarStyle: "default",
+  },
 };
 
 export const viewport: Viewport = {
@@ -62,53 +71,23 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-const clinicSchema = {
-  "@context": "https://schema.org",
-  "@type": "Dentist",
-  name: "Стоматология 3D plus",
-  description:
-    "Стоматологическая клиника в Ульяновске: лечение, имплантация, протезирование и гигиена.",
-  url: "https://3dplus73.ru",
-  telephone: "+7-8422-44-11-03",
-  email: "dentalik73@mail.ru",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "ул. Федерации, 50, офис 12",
-    addressLocality: "Ульяновск",
-    addressCountry: "RU",
-  },
-  openingHoursSpecification: [
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "09:00",
-      closes: "19:00",
-    },
-  ],
-  priceRange: "₽₽",
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.8",
-    reviewCount: "211",
-  },
-};
-
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="ru"
       data-scroll-behavior="smooth"
-      className={`${manrope.variable} ${unbounded.variable} ${nunito.variable}`}
+      className={`${manrope.variable} ${unbounded.variable}`}
     >
       <body className="min-h-screen bg-paper pb-[70px] text-ink lg:pb-0">
+        <a href="#main-content" className="skip-link">
+          Перейти к содержимому
+        </a>
         <SiteHeader />
-        <main>{children}</main>
+        <main id="main-content">{children}</main>
         <SiteFooter />
         <MobileCta />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(clinicSchema) }}
-        />
+        <CookieConsent />
+        <JsonLd data={[websiteSchema, clinicSchema]} />
       </body>
     </html>
   );

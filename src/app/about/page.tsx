@@ -7,14 +7,17 @@ import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { DoctorCard } from "@/components/home/doctors-preview";
 import { BookingSection } from "@/components/booking-section";
+import { JsonLd } from "@/components/json-ld";
+import { physiciansSchema } from "@/lib/schema";
+import { pageMetadata } from "@/lib/seo";
 import { documents, doctors, site, values } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "О клинике",
   description:
     "О стоматологии 3D plus в Ульяновске: команда врачей, принципы работы, оборудование, лицензия и документы клиники.",
-  alternates: { canonical: "/about" },
-};
+  path: "/about",
+});
 
 const promises = [
   "Вам и вашим близким",
@@ -234,6 +237,7 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <JsonLd data={physiciansSchema()} />
       <BookingSection />
     </>
   );

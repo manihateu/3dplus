@@ -1,6 +1,5 @@
-import Link from "next/link";
 import type { ReactNode } from "react";
-import { ChevronRight } from "lucide-react";
+import { Breadcrumbs, type BreadcrumbItem } from "@/components/breadcrumbs";
 import { cn } from "@/lib/utils";
 
 export function PageHero({
@@ -9,12 +8,14 @@ export function PageHero({
   description,
   children,
   className,
+  breadcrumb,
 }: {
   eyebrow: string;
   title: ReactNode;
   description?: ReactNode;
   children?: ReactNode;
   className?: string;
+  breadcrumb?: BreadcrumbItem[];
 }) {
   return (
     <section className={cn("noise relative overflow-hidden bg-sand/60 pb-14 pt-10 sm:pb-20 sm:pt-14", className)}>
@@ -29,16 +30,7 @@ export function PageHero({
         }}
       />
       <div className="container-page relative">
-        <nav
-          aria-label="Хлебные крошки"
-          className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.14em] text-ink/35"
-        >
-          <Link href="/" className="transition-colors hover:text-ink">
-            Главная
-          </Link>
-          <ChevronRight className="size-3" />
-          <span className="text-ink/60">{eyebrow}</span>
-        </nav>
+        <Breadcrumbs items={breadcrumb ?? [{ label: "Главная", href: "/" }, { label: eyebrow }]} />
         <div className="mt-8 max-w-3xl">
           <p className="eyebrow text-teal">{eyebrow}</p>
           <h1 className="mt-4 font-display text-[2.1rem] font-medium leading-[1.08] tracking-tight text-balance sm:text-5xl lg:text-6xl">

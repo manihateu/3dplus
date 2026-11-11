@@ -1,19 +1,32 @@
 export const site = {
+  url: "https://3dplus73.ru",
   name: "Стоматология 3D plus",
+  legalName: "Стоматология 3D plus",
   shortName: "3D plus",
   tagline: "Стоматологическая клиника в Ульяновске",
   description:
-    "Стоматология 3D plus в Ульяновске: лечение кариеса, имплантация, протезирование, виниры и профессиональная гигиена. Опытные врачи, современное оборудование, бережный подход.",
+    "Стоматология 3D plus в Ульяновске: лечение кариеса, имплантация, протезирование, виниры и гигиена. Опытные врачи и современное оборудование.",
   phone: { display: "8 (8422) 44-11-03", href: "tel:+78422441103" },
   phone2: { display: "8 (8422) 27-17-10", href: "tel:+78422271710" },
   email: "dentalik73@mail.ru",
   emailHref: "mailto:dentalik73@mail.ru",
   address: "г. Ульяновск, ул. Федерации, 50, офис 12",
   addressShort: "ул. Федерации, 50",
+  region: "Ульяновская область",
   city: "Ульяновск",
+  geo: { latitude: 54.326486, longitude: 48.396934 },
   hours: "Пн–Пт с 9:00 до 19:00",
   hoursNote: "Сб и Вс — выходной",
   bookingUrl: "https://n792303.yclients.com",
+  priceRange: "₽₽",
+  logo: "/images/logo-512.png",
+  ogImage: "/og-image.png",
+  contentUpdatedAt: "2026-11-11",
+  sameAs: [
+    "https://prodoctorov.ru/ulyanovsk/lpu/32098-dr-dent/",
+    "https://ulyanovsk.zoon.ru/medical/stomatologiya_3d_plus/",
+    "https://yandex.ru/maps/195/ulyanovsk/house/ulitsa_federatsii_50/YEEYdQ5mQEYDQFtufX9zd3hrYQ==/",
+  ],
   mapUrl:
     "https://yandex.ru/maps/195/ulyanovsk/house/ulitsa_federatsii_50/YEEYdQ5mQEYDQFtufX9zd3hrYQ==/?ll=48.396934%2C54.326486&z=17",
   mapEmbed:

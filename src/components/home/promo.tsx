@@ -69,7 +69,7 @@ export function Promo() {
                   Южная Корея, проверенная система. Точный план установки и сопровождение
                   после операции — обсудим на консультации имплантолога.
                 </p>
-                <Link href="/services#implantacia" className="btn btn-mint mt-7 !py-3.5">
+                <Link href="/services/implantaciya" className="btn btn-mint mt-7 !py-3.5">
                   Об имплантации
                   <ArrowUpRight className="size-4" />
                 </Link>

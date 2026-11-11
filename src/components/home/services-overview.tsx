@@ -31,7 +31,7 @@ export function ServicesOverview() {
           {services.map((service, index) => (
             <Reveal key={service.slug} delay={index * 0.05}>
               <Link
-                href={`/services#${service.anchor}`}
+                href={`/services/${service.slug}`}
                 className="group relative flex h-full flex-col overflow-hidden rounded-[1.75rem] acrylic p-6 transition-all duration-300 hover:-translate-y-1 hover:border-white hover:shadow-[0_30px_60px_-40px_rgba(8,33,31,0.55)]"
               >
                 <div className="flex items-start justify-between gap-4">

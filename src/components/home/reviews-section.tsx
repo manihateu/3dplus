@@ -56,7 +56,7 @@ export function ReviewsSection() {
               <span className="pb-1 text-sm font-bold text-ink/40">/ 5</span>
             </div>
             <div>
-              <Stars className="text-amber-500" />
+              <Stars className="text-amber-500" label="Рейтинг 4.8 из 5" />
               <p className="mt-1.5 text-xs font-semibold text-ink/60">
                 211 отзывов на Про докторов и ZOON
               </p>

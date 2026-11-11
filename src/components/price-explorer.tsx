@@ -44,9 +44,12 @@ export function PriceExplorer() {
           <div className="relative w-full lg:max-w-sm">
             <Search className="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-ink/35" />
             <input
+              type="search"
+              name="price-search"
               value={query}
               onChange={(event) => setQuery(event.target.value)}
               placeholder="Найти услугу: кариес, коронка, чистка…"
+              enterKeyHint="search"
               className="w-full rounded-full border border-white/70 bg-white/60 py-3 pl-11 pr-10 text-[13px] shadow-[inset_0_1px_0_rgba(255,255,255,0.85)] outline-none backdrop-blur-xl transition-colors placeholder:text-ink/35 focus:border-teal focus:bg-white/85"
               aria-label="Поиск по прайс-листу"
             />
@@ -68,6 +71,7 @@ export function PriceExplorer() {
                 key={category.slug}
                 type="button"
                 onClick={() => setActive(category.slug)}
+                aria-pressed={active === category.slug}
                 className={cn(
                   "shrink-0 rounded-full px-3.5 py-2 text-[11px] font-bold transition-colors",
                   active === category.slug
@@ -80,7 +84,10 @@ export function PriceExplorer() {
             ))}
           </div>
         </div>
-        <p className="mt-2 text-[10px] font-semibold uppercase tracking-[0.12em] text-ink/35">
+        <p
+          aria-live="polite"
+          className="mt-2 text-[10px] font-semibold uppercase tracking-[0.12em] text-ink/35"
+        >
           Найдено услуг: {total}
         </p>
       </div>

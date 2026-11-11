@@ -10,6 +10,5 @@ export default function robots(): MetadataRoute.Robots {
       },
     ],
     sitemap: "https://3dplus73.ru/sitemap.xml",
-    host: "https://3dplus73.ru",
   };
 }

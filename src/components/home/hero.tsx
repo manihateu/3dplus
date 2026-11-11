@@ -1,8 +1,5 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { ArrowRight, CalendarCheck, Check, Clock, MapPin, ShieldCheck, Sparkles } from "lucide-react";
 import { site, stats } from "@/lib/site";
 import { Stars } from "@/components/stars";
@@ -22,23 +19,19 @@ export function Hero() {
       />
 
       <div className="container-page relative grid items-center gap-12 py-14 sm:py-20 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-16 lg:py-24">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        >
+        <div className="hero-enter">
           <div className="inline-flex items-center gap-2.5 rounded-full border border-white/12 bg-white/[0.06] px-4 py-2 text-[11px] font-bold uppercase tracking-[0.16em] text-paper/70 backdrop-blur">
             <span className="relative flex size-2">
               <span className="absolute inline-flex size-2 animate-ping rounded-full bg-mint-deep opacity-70" />
               <span className="relative inline-flex size-2 rounded-full bg-mint-deep" />
             </span>
-            Стоматология в Ульяновске
+            3D plus · клиника в центре
           </div>
 
           <h1 className="mt-6 font-display text-[2.55rem] font-medium leading-[1.03] tracking-[-0.03em] text-balance sm:text-[3.4rem] lg:text-[3.1rem] xl:text-[3.85rem]">
-            Стоматология, которой доверяют{" "}
+            Стоматология в Ульяновске, которой{" "}
             <span className="relative inline-block text-mint-deep">
-              улыбку
+              доверяют
               <svg
                 className="absolute -bottom-1 left-0 h-3 w-full text-lime/70"
                 viewBox="0 0 200 12"
@@ -69,7 +62,7 @@ export function Hero() {
 
           <div className="mt-9 flex flex-wrap items-center gap-x-7 gap-y-4 text-sm">
             <div className="flex items-center gap-3">
-              <Stars size="size-3.5" className="text-lime" />
+              <Stars size="size-3.5" className="text-lime" label="Рейтинг 4.8 из 5" />
               <span className="font-semibold text-paper/80">4.8 из 5</span>
               <span className="text-paper/40">211 отзывов</span>
             </div>
@@ -79,14 +72,10 @@ export function Hero() {
               Стерильность по стандартам
             </span>
           </div>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.96 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-          className="relative mx-auto w-full max-w-[520px] lg:max-w-none"
-        >
+        <div className="hero-enter hero-enter-delay relative mx-auto w-full max-w-[520px] lg:max-w-none">
+
           <div className="absolute -right-8 -top-8 hidden size-40 rounded-full border border-white/10 sm:block" />
           <div className="absolute -bottom-10 -left-8 hidden size-52 rounded-full border border-white/10 sm:block" />
 
@@ -96,7 +85,7 @@ export function Hero() {
                 src="/images/clinic-4.jpg"
                 alt="Стоматологическая клиника 3D plus в Ульяновске"
                 fill
-                priority
+                preload
                 sizes="(min-width: 1024px) 46vw, 100vw"
                 className="object-cover"
               />
@@ -109,7 +98,7 @@ export function Hero() {
                   <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-mint-deep">
                     3D plus
                   </p>
-                  <p className="mt-1 font-rounded text-xl font-extrabold tracking-tight sm:text-[1.4rem]">
+                  <p className="mt-1 font-sans text-xl font-extrabold tracking-tight sm:text-[1.4rem]">
                     Бережно. Без боли.
                   </p>
                 </div>
@@ -151,7 +140,7 @@ export function Hero() {
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
 
       <div className="container-page relative">
