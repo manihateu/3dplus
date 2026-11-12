@@ -9,14 +9,18 @@ WORKDIR /app
 # --- зависимости ------------------------------------------------------------
 FROM base AS deps
 COPY package.json package-lock.json ./
-RUN npm ci
+# Кэш npm между сборками: на слабом сервере экономит минуты
+RUN --mount=type=cache,target=/root/.npm,sharing=locked \
+    npm ci --no-audit --no-fund
 
 # --- сборка -----------------------------------------------------------------
 FROM base AS builder
 ENV NEXT_TELEMETRY_DISABLED=1
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
-RUN npm run build
+# Кэш Next.js (.next/cache) между сборками — ускоряет повторные билды
+RUN --mount=type=cache,target=/app/.next/cache,sharing=locked \
+    npm run build
 
 # --- рантайм ----------------------------------------------------------------
 FROM base AS runner

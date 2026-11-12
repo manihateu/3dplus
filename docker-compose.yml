@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: 3dplus-web:latest
+    image: ${WEB_IMAGE:-ghcr.io/manihateu/3dplus:latest}
     container_name: 3dplus-web
     restart: unless-stopped
     init: true

@@ -23,20 +23,52 @@ npm run lint     # ESLint
 
 ## Деплой на сервер (Docker)
 
-В проекте есть `Dockerfile` (multi-stage, Next.js `output: "standalone"`) и `docker-compose.yml`. На сервере нужен только Docker с плагином Compose v2.
+В проекте есть `Dockerfile` (multi-stage, Next.js `output: "standalone"`), `docker-compose.yml` и workflow `.github/workflows/docker.yml`.
+
+### Вариант 1 — готовый образ из GHCR (рекомендуется для слабого VPS)
+
+Каждый пуш в `main` собирает образ на раннере GitHub Actions и публикует его в `ghcr.io/manihateu/3dplus:latest`. Сервер только скачивает готовый образ, сборка на нём не запускается.
+
+Если пакет в GHCR приватный (по умолчанию), один раз авторизуйтесь на сервере:
 
 ```bash
-git clone <репозиторий> 3dplus && cd 3dplus
-docker compose up -d --build
+# PAT с правом read:packages
+echo "<токен>" | docker login ghcr.io -u manihateu --password-stdin
 ```
 
-Сайт будет доступен на `http://<ip-сервера>:3000`.
+Либо сделайте пакет публичным: GitHub → Packages → `3dplus` → Package settings → Change visibility → Public.
 
-Обновление после изменений:
+Запуск и обновление:
+
+```bash
+git clone https://github.com/manihateu/3dplus.git && cd 3dplus
+docker compose pull
+docker compose up -d
+```
 
 ```bash
 git pull
+docker compose pull
+docker compose up -d
+```
+
+То есть после пуша в `main` дождитесь зелёного workflow и выполните три команды выше — пересборки на сервере не будет.
+
+### Вариант 2 — сборка на сервере
+
+```bash
 docker compose up -d --build
+```
+
+Первый билд на VPS с 1–2 vCPU идёт десятки минут (Next.js + Turbopack + `npm ci`). Повторные быстрее за счёт BuildKit cache mounts (`/root/.npm` и `.next/cache`), но на слабом сервере всё равно медленно. Если сборка падает по памяти — добавьте swap или собирайте образ вне сервера (вариант 1).
+
+### Общее
+
+Сайт слушает `http://<ip-сервера>:3000`. Порт и адрес образа меняются через `.env` рядом с `docker-compose.yml`:
+
+```bash
+APP_PORT=8080
+# WEB_IMAGE=ghcr.io/manihateu/3dplus:latest
 ```
 
 Полезные команды:
@@ -47,12 +79,6 @@ docker compose logs -f web        # логи приложения
 curl localhost:3000/api/health    # проверка живости
 docker compose down               # остановить (кэш сохраняется в volume)
 docker compose down -v            # остановить и удалить кэш
-```
-
-Порт по умолчанию — 3000. Чтобы поменять, создайте рядом с `docker-compose.yml` файл `.env`:
-
-```bash
-APP_PORT=8080
 ```
 
 Домен и HTTPS терминируются внешним прокси (nginx, Caddy, Traefik) или балансировщиком. Пример location для nginx:
@@ -72,7 +98,7 @@ location / {
 
 Особенности:
 
-- образ собирается на сервере; если на нём мало ресурсов, соберите образ локально, запушьте в registry и замените в compose `build:` на `image:`.
+- образ собирается под `linux/amd64`; для ARM-сервера поменяйте `platforms` в `.github/workflows/docker.yml`.
 - кэш Next.js (`.next/cache`) вынесен в volume `next-cache` и переживает перезапуск контейнера.
 - контейнер работает от непривилегированного пользователя `nextjs`.
 
@@ -89,6 +115,7 @@ src/
     contacts/           # контакты, карта, запись
     privacy/            # политика обработки данных
     api/booking/        # приём заявок с формы
+    api/health/         # healthcheck для Docker
     sitemap.ts, robots.ts, icon.png
   components/
     site-header.tsx, site-footer.tsx, mobile-cta.tsx
