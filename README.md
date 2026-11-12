@@ -21,6 +21,61 @@ npm run start    # запуск сборки
 npm run lint     # ESLint
 ```
 
+## Деплой на сервер (Docker)
+
+В проекте есть `Dockerfile` (multi-stage, Next.js `output: "standalone"`) и `docker-compose.yml`. На сервере нужен только Docker с плагином Compose v2.
+
+```bash
+git clone <репозиторий> 3dplus && cd 3dplus
+docker compose up -d --build
+```
+
+Сайт будет доступен на `http://<ip-сервера>:3000`.
+
+Обновление после изменений:
+
+```bash
+git pull
+docker compose up -d --build
+```
+
+Полезные команды:
+
+```bash
+docker compose ps                 # статус и health
+docker compose logs -f web        # логи приложения
+curl localhost:3000/api/health    # проверка живости
+docker compose down               # остановить (кэш сохраняется в volume)
+docker compose down -v            # остановить и удалить кэш
+```
+
+Порт по умолчанию — 3000. Чтобы поменять, создайте рядом с `docker-compose.yml` файл `.env`:
+
+```bash
+APP_PORT=8080
+```
+
+Домен и HTTPS терминируются внешним прокси (nginx, Caddy, Traefik) или балансировщиком. Пример location для nginx:
+
+```nginx
+location / {
+    proxy_pass http://127.0.0.1:3000;
+    proxy_http_version 1.1;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection "upgrade";
+}
+```
+
+Особенности:
+
+- образ собирается на сервере; если на нём мало ресурсов, соберите образ локально, запушьте в registry и замените в compose `build:` на `image:`.
+- кэш Next.js (`.next/cache`) вынесен в volume `next-cache` и переживает перезапуск контейнера.
+- контейнер работает от непривилегированного пользователя `nextjs`.
+
 ## Структура
 
 ```

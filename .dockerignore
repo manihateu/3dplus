@@ -1,0 +1,25 @@
+# зависимости и артефакты сборки (пересобираются внутри образа)
+node_modules
+.next
+out
+coverage
+tsconfig.tsbuildinfo
+
+# служебное
+.git
+.gitignore
+.dockerignore
+Dockerfile
+docker-compose*.yml
+AGENTS.md
+README.md
+*.md
+
+# локальные секреты и отчёты
+.env*
+*.pem
+build-log.txt
+build-metrics.json
+old-*.json
+old-*.html
+old-headers.txt
