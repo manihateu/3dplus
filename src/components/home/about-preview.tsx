@@ -29,7 +29,7 @@ export function AboutPreview() {
                 alt="Коллектив стоматологии 3D plus"
                 fill
                 sizes="(min-width: 1024px) 55vw, 100vw"
-                className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                className="object-contain object-center transition-transform duration-700 group-hover:scale-[1.02]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/20 to-transparent" />
               <div className="absolute left-5 top-5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-ink/40 px-3.5 py-2 text-[10px] font-bold uppercase tracking-[0.16em] text-paper backdrop-blur">

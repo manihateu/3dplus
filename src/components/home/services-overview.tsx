@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 const accentClasses = {
   mint: "bg-mint text-forest",
   sand: "bg-sand text-ink",
-  blush: "bg-blush text-[#a63d24]",
+  blush: "bg-blush text-[#008a8f]",
 } as const;
 
 export function ServicesOverview() {

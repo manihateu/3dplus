@@ -21,15 +21,15 @@ export function Promo() {
               <div className="absolute -right-10 -top-12 size-48 rounded-full border-[22px] border-white/35" />
               <div className="absolute -bottom-14 right-16 size-36 rounded-full bg-white/25 blur-md" />
               <div className="relative">
-                <span className="inline-flex items-center gap-2 rounded-full bg-white/60 px-3.5 py-2 text-[10px] font-bold uppercase tracking-[0.14em] text-[#8f3a24]">
+                <span className="inline-flex items-center gap-2 rounded-full bg-white/60 px-3.5 py-2 text-[10px] font-bold uppercase tracking-[0.14em] text-[#008a8f]">
                   <Cake className="size-3.5" />
                   День рождения
                 </span>
                 <div className="mt-8 flex items-end gap-2">
-                  <span className="font-display text-6xl font-medium leading-none tracking-tight text-[#8f3a24] sm:text-7xl">
+                  <span className="font-display text-6xl font-medium leading-none tracking-tight text-[#008a8f] sm:text-7xl">
                     −15
                   </span>
-                  <span className="pb-1 font-display text-3xl font-medium text-[#8f3a24]">%</span>
+                  <span className="pb-1 font-display text-3xl font-medium text-[#008a8f]">%</span>
                 </div>
                 <h3 className="mt-3 max-w-sm font-display text-xl font-medium tracking-tight text-ink sm:text-2xl">
                   Имениннику — скидка на лечение и гигиену

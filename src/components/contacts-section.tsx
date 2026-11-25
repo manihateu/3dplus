@@ -43,7 +43,7 @@ export function ContactsSection({ withHeading = true }: { withHeading?: boolean 
               </div>
 
               <div className="rounded-[1.5rem] acrylic p-5">
-                <span className="grid size-10 place-items-center rounded-xl bg-blush text-[#a63d24]">
+                <span className="grid size-10 place-items-center rounded-xl bg-blush text-[#008a8f]">
                   <Clock className="size-4.5" />
                 </span>
                 <p className="mt-4 text-[10px] font-bold uppercase tracking-[0.14em] text-ink/35">

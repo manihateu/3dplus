@@ -219,7 +219,7 @@ export function BookingForm() {
             {error ? (
               <p
                 role="alert"
-                className="rounded-xl border border-[#a63d24]/20 bg-blush/80 px-4 py-3 text-xs font-semibold text-[#a63d24]"
+                className="rounded-xl border border-[#00CAE6]/25 bg-blush/80 px-4 py-3 text-xs font-semibold text-[#008a8f]"
               >
                 {error}
               </p>

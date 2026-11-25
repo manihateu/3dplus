@@ -3,16 +3,16 @@
 @theme inline {
   --color-ink: #08211f;
   --color-ink-soft: #11332f;
-  --color-forest: #0c4a42;
-  --color-teal: #0e7c6b;
-  --color-teal-bright: #16a892;
-  --color-mint: #d8f5e9;
-  --color-mint-deep: #a9e8d2;
-  --color-lime: #d7f36a;
+  --color-forest: #064d3a;
+  --color-teal: #00CB5E;
+  --color-teal-bright: #00CAE6;
+  --color-mint: #d9fbea;
+  --color-mint-deep: #a6f0d0;
+  --color-lime: #00CAE6;
   --color-sand: #f3efe6;
   --color-paper: #fbfaf7;
-  --color-blush: #ffe3d9;
-  --color-coral: #ff7a59;
+  --color-blush: #dff8ff;
+  --color-coral: #00CAE6;
   --color-line: #e4e1d8;
 
   --font-sans: var(--font-manrope);
@@ -225,7 +225,7 @@
   }
 
   .btn-mint:hover {
-    background: #e5fa9a;
+    background: #33d6ee;
   }
 
   .btn-outline {
